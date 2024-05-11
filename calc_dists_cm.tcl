@@ -1,34 +1,34 @@
 #################################################################
-#Script para graficar a distância entre o CM de dois grupos     #
+#Script to graph the distance between the CM of two groups     #
 #################################################################
 
 ########################################################
-#Mede distancias cruzadas e escreve no arquivo de saida#
+#Measures crossed distances and writes to the output file#
 
-#Abre arquivo de saida
+#Open output file
 set dist [open dist_dinamica.dat w]
 
-#Define as selecoes
+#Set the selections
 set sel1 [atomselect top "name CA"]
 set sel2 [atomselect top "name P"]
 
-#Inicializa loop na trajetoria
+#Initialize loop on the trajectory
 animate goto start
 set nframes [molinfo top get numframes]
 set frame 0 
 
 
-#Varre cada frame
+#Scan each frame
 for {set i 0} {$i < $nframes} {incr i } {
   #vai para frame i
   animate goto $i 
 
-  #Calcula as distancias
+  #Calculate distances
   set d [expr abs([lindex [measure center $sel1] 2] - [lindex [measure center $sel2] 2])]
 
-  #Escreve as infromacoes nos arquivos de saida
+  #Write information to output files
   puts $dist "$i $d"
 }
 
-#fecha arquivo
+#close file
 close $dist
