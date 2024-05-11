@@ -1,5 +1,6 @@
 #### VMD Script to Secondary Strucutre Calculations
 #### Written by Alexandre Suman de Araujo in 2009
+#### This script must be in the folder along with the "ssres_template.agr" template.
 
 #Define as variaveis a serem usadas
 set ssres "ss_by_residue.agr"
