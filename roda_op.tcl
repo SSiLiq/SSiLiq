@@ -1,7 +1,8 @@
+
 source orderparam2_update.tcl
 # Store order parameter data in array named arr 
-orderparam-c3 arrc3 {same residue as within 10 of protein}
-orderparam-c2 arrc2 {same residue as within 10 of protein}
+orderparam-c3 arrc3 
+orderparam-c2 arrc2 
 # Store order parameter data for just the top monolayer 
 #orderparam-c3 arr {same residue as "name P.*" and z > 0} 
 # Write out data to a file 
